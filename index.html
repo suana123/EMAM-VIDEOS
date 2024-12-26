@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer Muhammad Ali Mirza Videos</title>
+    <style>
+      body {
+    font-family: 'Poppins', Arial, sans-serif; /* Stylish font */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #6ceb6060, #0000004d); /* Subtle gradient background */
+    color: #333;
+    line-height: 1.6;
+   
+}
+header {
+        background-color: #343a40;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap; /* Ensures wrapping for smaller screens */
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.5em;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .header-container {
+            flex-direction: column; /* Stack logo and text vertically */
+            gap: 10px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-left: 20px;
+        }
+    }
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjust for better responsiveness */
+    gap: 25px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center alignment */
+}
+
+.video-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+   
+}
+
+.video-card:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.568);
+    background-color: aliceblue !important;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    max-height: 240px; /* Slightly increased for better view */
+    border-bottom: 1px solid #ddd;
+    background-color: rgb(178, 213, 245) !important;
+}
+
+.content {
+    padding: 4px;
+    text-align: center;
+}
+
+.content h3 {
+    font-size: 1.3em; /* Slightly larger font for title */
+    margin-bottom: 12px;
+    color: #007bff; /* Vibrant color for titles */
+    transition: color 0.3s ease;
+}
+
+.content h3:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.content p {
+    font-size: 0.95em;
+    color: #1f1f1f;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: white;
+    margin-top: 20px;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Footer shadow */
+}
+
+.download-button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth animation */
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* margin-left: 25% ; */
+}
+
+.download-button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80); /* Darker gradient on hover */
+    box-shadow: 0 6px 8px rgba(0, 123, 255, 0.6), 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Lift effect */
+    cursor: pointer;
+}
+
+.download-button:active {
+    transform: translateY(0); /* Button press effect */
+    box-shadow: 0 3px 5px rgba(0, 123, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #004080, #002d5a); /* Pressed state color */
+}
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: white;
+            margin-top: 20px;
+        }
+        .animated-heading {
+            font-family: 'Times New Roman', Times, serif;
+        font-size: 2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
+        position: relative;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeSlideIn 1.5s ease-out forwards;
+        background: linear-gradient(90deg, #07f54ef8, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes fadeSlideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .animated-heading {
+            font-size: 1.5em;
+            letter-spacing: 1.5px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .animated-heading {
+            font-size: 1.5em;
+            letter-spacing: 1px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://yt3.googleusercontent.com/zqMxlJ2jtOfpTGV6lCbLslHv4g7D7XBBiYyQumvzhi_F5ZeZse5X-10yJhn0U9T44UPiBnGOmg=s900-c-k-c0x00ffffff-no-rj" alt="Logo" class="logo">
+            <h1 class="animated-heading">Engineer Muhammad Ali Mirza Videos</h1>
+        </div>
+    </header>
+    <div class="container">
+        <!-- Video Card 1 -->
+        <div class="video-card">
+            <video controls>
+                <source src="abubakarsidduqe.mp4_1735196657613.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green;">Abu Bakr ﺭﺿﻲ ﺍﻟﻠﻪ ﺗﻌﺎﻟﻰ ﻋﻨﻪ se Ikhtilaf Or Waqia E basharat!</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold;">Hazarat Abu bakr Se Ikhtilaf kun?? Abu bakrﺭﺿﻲ ﺍﻟﻠﻪ ﺗﻌﺎﻟﻰ ﻋﻨﻪ ka Jannat Ki basharat</p>
+                <a href="abubakarsidduqe.mp4_1735196657613.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Video Card 2 -->
+        <div class="video-card">
+            <video controls>
+                <source src="RasoolAllah ki Shaan.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green;"> رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ki Shaan ko Us Tarah Naa barhana!!</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold;"> رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ Ne Farmaya mujhy Allah Ka Banda Or Rasool Hi kehna!☝️❤️.</p>
+                <a href="RasoolAllah ki Shaan.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 3 -->
+        <div class="video-card">
+            <video controls>
+                <source src="Loty ki Tooti.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green;">Kia Loty Ki Tooti Sidhi Na Rkhne Per Qatal??</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">Sheikh Abdul Qadir Jilani رَحِمَهُ اللَّهُ عَلَيْهِ ne loty ki tooti qibla rukh na rkhne per mureed ko qatal krdia!!😅❤️</p>
+                <a href="Loty ki Tooti.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 4 -->
+        <div class="video-card">
+            <video controls>
+                <source src="WhyBapajani.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;"> Bapa Jani (Ilyad Qadri رَحِمَهُ اللَّهُ عَلَيْهِ) ka tv per glt aqaid sikhana or ilm ka na hona??</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold;"> Bapa jani ka  tv per galat sikhana or sath hi matric pass na hona or bhi tarah tarah ke masail ke liye video!!❤️</p>
+                <a href="WhyBapajani.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 5 -->
+        <div class="video-card">
+            <video controls>
+                <source src="Rasoolallah ka qatil.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;"> رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ Ke Qatil kon?? Shia hazrat ka sahaba per ilzam??❤️ </h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold;"> Bapa jani ka  tv per galat sikhana or sath hi matric pass na hona or bhi tarah tarah ke masail ke liye video!!❤️</p>
+                <a href="Rasoolallah ka qatil.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 6 -->
+        <div class="video-card">
+            <video controls>
+                <source src="IsaAndAllah.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;"> حضرت عیسی علیہ السلام Ki Qayamat men Allah Se discussion!!</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold;">Hazrat Isa (A.s) Ki Qayamat ke roz Allah se discussion or shirk ka muh tor jawab!!❤️</p>
+                <a href="IsaAndAllah.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 7 -->
+        <div class="video-card">
+            <video controls>
+                <source src="Insan Vs Shaitan.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Insan KI shaitan se Akhri Mulaqat!! Intresting Waqia Listen must!!❤️ </h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">qayamat ke din insanon ki shaitan se akhri mulaqat or shaitan insanon ko kia kahega or qayamat ke roz shaitan ka kia kirdar hoga ??❤️</p>
+                <a href="Insan Vs Shaitan.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 8 -->
+        <div class="video-card">
+            <video controls>
+                <source src="2812 ka kirdar.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Sahih bukhari hadees number (2812) ka ahem kirdar!!❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">hazrat e muavia (R.A) or Hazarat Ammar Ibne Yasir (R.A) ka Waqia or hazrat muavia ka baghi jamat khelana?❤️ </p>
+                <a href="2812 ka kirdar.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 9 -->
+        <div class="video-card">
+            <video controls>
+                <source src="ulma ka jawab.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Sahih bukhari (2812) per ahle hadees ulmaon ka jawab kia?❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">Sahih bukhari hadees 2812 per aiteraz or ahle hadees ulma ka jawab or engineer muhammad ali mirza ka reptal video!!❤️ </p>
+                <a href="ulma ka jawab.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 10 -->
+        <div class="video-card">
+            <video controls>
+                <source src="NamazeMuhammadi.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Namaz e muhammadi ka shi tareeka or ramzan ki namazain ??❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">Namaz e muhammadi ka shi tareeka or ramzan men namaz kis tarah parhi jati hen? Rafayadain or not?</p>
+                <a href="NamazeMuhammadi.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 11 -->
+        <div class="video-card">
+            <video controls>
+                <source src="1965kebaby.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Kia 1965 ki Pakistan india ki war men kia boms catch hoa krty thy? 1965 ke buzurg?❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">kia 1965 ki jung men buzurg hazarat aker bombs pakra krty thy or kia aisa waqia dekha gya he kia pakistan iski badolat jeeta?</p>
+                <a href="1965kebaby.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 12 -->
+        <div class="video-card">
+            <video controls>
+                <source src="ikhtilaf.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">biwi Or maa baap se firqy or quran o hadees men ikhtilafat ki wajah? or hal❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">biwi or maa baap se firqy or quran o hadees ke maslay men ikhtilaf or inko kesa smjhaya jaye?❤️</p>
+                <a href="ikhtilaf.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+        <!-- Video Card 13 -->
+        <div class="video-card">
+            <video controls>
+                <source src="Muskilat.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Allah ke Rasool ki dawat phelane per muhskilat azmaish?❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">DR israr (R.A) ki ek ahem baat ke jo koi Allah ke rasool ki dawat agy phunchayega muhskilat se guzarna hoga usy bhi or azmaish ayegi jese ke rasool allah per ayin❤️</p>
+                <a href="Muskilat.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+          <!-- Video Card 14 -->
+        <div class="video-card">
+            <video controls>
+                <source src="baalmubarak.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ke Baal mubarak or tabarukat must listen!❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">hajj or umrah ke moqy per رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ ka baal mundhwana or taqseem krna sahaba men!❤️</p>
+                <a href="baalmubarak.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+          <!-- Video Card 15 -->
+        <div class="video-card">
+            <video controls>
+                <source src="jumma ka din.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">JUMMA KE DIN KI AHMEIAT! Or ek sahabi ka rasool allah se sawal❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">jumma ke din hi qaymat ayegi or jumma ke din hi hazrat Adam A.S paida hoye!❤️</p>
+                <a href="jumma ka din.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+          <!-- Video Card 16 -->
+        <div class="video-card">
+            <video controls>
+                <source src="Allah ka rizq.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Allah ka apni har makhlookh ko rizq dena!❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">Allah apni har makhlookh ko rizq deta he (Surah: Anqaboot) Must listen!❤️</p>
+                <a href="Allah ka rizq.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+          <!-- Video Card 17 -->
+        <div class="video-card">
+            <video controls>
+                <source src="dosto se ikhtilaf.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Doston se ikhtilafat or iska hal (solution)!❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">doston se talukat ka khatam hojana or baat baat per jhagarna aqidy per!❤️</p>
+                <a href="dosto se ikhtilaf.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+         
+          <!-- Video Card 18 -->
+        <div class="video-card">
+            <video controls>
+                <source src="EMAM per galiyan.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Ahle hadees ulma ka(Engineer muhammad ali mirza) ko galiyan or (fIR) katwana?! ❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">Engineer muhammad ali mirza ke kamiyabi per ahle hadees ulmaon ka galiyan nikalty rehna or tarah tarah ki fir darj krna or EMAM ka jawab!❤️</p>
+                <a href="EMAM per galiyan.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+            <!-- Video Card 19 -->
+        <div class="video-card">
+            <video controls>
+                <source src="zabradastikishadi.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">zabradasti ki shadi karwana choti umer men shadi ??❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">choti umer men shadi karwana zabradasti ki or marzi na lena oladon se kia hal?❤️</p>
+                <a href="zabradastikishadi.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+            <!-- Video Card 20 -->
+        <div class="video-card">
+            <video controls>
+                <source src="shirk.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Shirk? (Surah Al-Mominun)❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">Allah kia farmata he shirk ke bary men surah mominun men?❤️</p>
+                <a href="shirk.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+               <!-- Video Card 21 -->
+        <div class="video-card">
+            <video controls>
+                <source src="Sunnivsshia.mp4" type="video/mp4">
+                <!-- Aapka browser is video ko support nahi karta. -->
+            </video>
+            <div class="content">
+                <h3 style="font-size: 20px; color: green; text-transform: capitalize;">Sunni Vs Shia Conflict❤️</h3>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: bold; text-transform: capitalize;">Sunnion or shiaon ka apas men jhagarna aqaid per or musalmanon ka apas men bant?❤️</p>
+                <a href="Sunnivsshia.mp4" class="download-button" download>Download Video</a>
+            </div>
+        </div>
+        <!-- Add more videos similarly -->
+    </div>
+      
+   
+
+         
+    <footer>
+        <p>Copyright © 2024 Engineer Muhammad Ali Mirza Videos. AH Developers. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
